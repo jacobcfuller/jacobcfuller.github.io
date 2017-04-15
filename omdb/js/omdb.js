@@ -1,4 +1,5 @@
-var $Form = $('form'), $Container = $('#container');
+var $Form = $('form'), $Container = $('#container'), $Card = $('#card');
+$Card.hide();
 $Container.hide();
 $Form.on('submit', function(p_oEvent){
     var sUrl, sMovie, oData;
@@ -13,6 +14,7 @@ sMovie = $Form.find('input').val();
             $Container.find('.plot').text(oData.Plot);
             $Container.find('.poster').html('<img src="' + oData.Poster + '"/>');
             $Container.find('.year').text(oData.Year);
+            $Card.show();
             $Container.show();
         }
     });    
