@@ -2,8 +2,10 @@
 <html>
 <head>
   <title>OMDB WebSite</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="css/flex.css">
+  <link rel="stylesheet" type="text/css" hred="css/custom.css">
 </head>
 <body>
   <header>
@@ -14,7 +16,17 @@
     </nav>
   </header>
   <main>
-  	
+  	<form>
+  	  <div class="card">
+  	    <div class="card-content">
+  	      <span class="card-title center">Search for a movie</span>
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          </div>  
+        </div>
+      </div>
+    </form>
   </main>
   <footer class="page-footer light-blue">
     <div class="container">
