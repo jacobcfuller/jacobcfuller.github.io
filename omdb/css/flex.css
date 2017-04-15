@@ -7,19 +7,3 @@ body {
 main {
   flex: 1 0 auto;
 }
-
-form {
-	display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-.card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card form {
-    max-width: 100%;
-}
