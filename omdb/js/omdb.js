@@ -1,6 +1,6 @@
-var $Form = $('form'), $Container = $('#container'), $Card = $('#card');
-$Card.hide();
+var $Form = $('form'), $Container = $('#container'), $Poster= $('#poster');
 $Container.hide();
+$Poster.hide();
 $Form.on('submit', function(p_oEvent){
     var sUrl, sMovie, oData;
     p_oEvent.preventDefault();
@@ -12,10 +12,10 @@ sMovie = $Form.find('input').val();
             console.log(oData);
             $Container.find('.title').text(oData.Title);
             $Container.find('.plot').text(oData.Plot);
-            $Container.find('.poster').html('<img src="' + oData.Poster + '"/>');
             $Container.find('.year').text(oData.Year);
-            $Card.show();
             $Container.show();
+            $Poster.find('.poster').html('<img src="' + oData.Poster + '"/>');
+            $Poster.show();
         }
     });    
 });
