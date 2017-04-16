@@ -15,7 +15,7 @@ function getMovies(searchText){
       $.each(movies, (index, movie) => {
         output += `
           <div class="col s12 m4">
-            <div class="card blue">
+            <div class="card blue hoverable">
               <div class="card-content white-text">
                 <span class="card-title">${movie.Title}</span>
               </div>
