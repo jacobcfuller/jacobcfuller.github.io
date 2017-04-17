@@ -10,8 +10,22 @@ function getMovies(searchText){
   axios.get('http://www.omdbapi.com?s='+searchText)
     .then((response) => {
       console.log(response);
-      let movies = response.data.Search;
       let output = '';
+      if (response.data.Response === "False"){
+        console.log(response.data.Response);
+        console.log(response.data.Error);
+        noOutput = `
+          <div class="col s12">
+            <div class="card blue hoverable">
+              <div class="card-content white-text center">
+                <span class="card-title">Movie Not Found :(</span>
+              </div>
+            </div>
+          </div>          
+        `;
+        $('#movies').html(noOutput);
+      } else {
+      let movies = response.data.Search;
       $.each(movies, (index, movie) => {
         output += `
           <div class="col s12 m4">
@@ -28,8 +42,9 @@ function getMovies(searchText){
           </div>          
         `;
       });
-
+      console.log(output);
       $('#movies').html(output);
+    }
     })
     .catch((err) => {
       console.log(err);
