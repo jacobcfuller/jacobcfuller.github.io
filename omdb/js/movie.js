@@ -37,13 +37,13 @@ function getMovies(searchText){
 }
 
 function movieSelected(id){
-  sessionStorage.setItem('movieId', id);
-  window.location = 'movie.html';
+  window.location = 'movie.html?movieId='+id;
   return false;
 }
 
 function getMovie(){
-  let movieId = sessionStorage.getItem('movieId');
+  var urlParams = new URLSearchParams(window.location.search)
+  movieId = urlParams.get('movieId')
 
   axios.get('http://www.omdbapi.com?i='+movieId)
     .then((response) => {
