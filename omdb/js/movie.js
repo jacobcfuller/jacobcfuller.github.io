@@ -73,7 +73,9 @@ function getMovie(){
     .then((response) => {
       console.log(response);
       let movie = response.data;
-
+      if(movie.Poster === "N/A"){
+        movie.Poster = "No_picture_available.png";
+      }
       let output =`
         <div class="row">
           <div class="col l8 m12 s12 ">
